@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>id</td>
+        <td>名称</td>
+        <td>价格</td>
+        <td>详细</td>
+    <tr th:each="u,memberStat:${itemsList}">
+
+        <td th:text="${u.id}"/>
+        <td th:text="${u.name}"/>
+        <td th:text="${u.price}"/>
+        <td th:text="${u.detail}"/>
+        <td><a th:href="@{/deleteitems(Id=${u.id})}">删除</a></td>
+        <td><a th:href="@{/getbyIditems(Id=${u.id})}">修改</a></td>
+    </tr>
+
+</table>
+<a th:href="@{/add}">增加</a>
+</body>
+</html>
